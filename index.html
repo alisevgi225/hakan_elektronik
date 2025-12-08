@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="tr">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hakan Elektronik - POS ve Barkod Sistemleri</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      overflow-x: hidden;
+      width: 100%;
+    }
+    
+    .page {
+      display: none;
+      min-height: 100%;
+      width: 100%;
+      animation: fadeIn 0.5s ease-in;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .navbar {
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      width: 100%;
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #dc2626;
+      animation: slideInLeft 0.8s ease-out;
+    }
+    
+    .logo span {
+      color: #f5f5f5;
+    }
+    
+    .nav-menu {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      animation: slideInRight 0.8s ease-out;
+    }
+    
+    .nav-link {
+      color: #f5f5f5;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .nav-link:hover, .nav-link.active {
+      background: #dc2626;
+      transform: translateY(-2px);
+    }
+    
+    .hero {
+      background: linear-gradient(135deg, #1a1a1a 0%, #000000 50%, #dc2626 100%);
+      padding: 6rem 2rem;
+      text-align: center;
+      color: #f5f5f5;
+      width: 100%;
+    }
+    
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      animation: fadeIn 1s ease-out;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      animation: slideInLeft 1s ease-out;
+    }
+    
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2.5rem;
+      color: #e5e5e5;
+      animation: slideInRight 1s ease-out;
+    }
+    
+    .cta-button {
+      background: #dc2626;
+      color: #f5f5f5;
+      padding: 1rem 3rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(220, 38, 38, 0.4);
+      animation: pulse 2s infinite;
+    }
+    
+    .cta-button:hover {
+      background: #b91c1c;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(220, 38, 38, 0.6);
+    }
+    
+    .section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #000000;
+      position: relative;
+      animation: fadeIn 0.8s ease-out;
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 4px;
+      background: #dc2626;
+      margin: 1rem auto 0;
+      border-radius: 2px;
+    }
+    
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+    
+    .product-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      animation: fadeIn 0.6s ease-out;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(220, 38, 38, 0.3);
+    }
+    
+    .product-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      background: linear-gradient(135deg, #f5f5f5 0%, #e5e5e5 100%);
+    }
+    
+    .product-info {
+      padding: 2rem;
+    }
+    
+    .product-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #000000;
+    }
+    
+    .product-info p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .product-price {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #dc2626;
+      margin-bottom: 1rem;
+    }
+    
+    .btn-secondary {
+      background: #000000;
+      color: #f5f5f5;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    
+    .btn-secondary:hover {
+      background: #dc2626;
+      transform: scale(1.05);
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .feature-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      animation: fadeIn 0.8s ease-out;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(220, 38, 38, 0.2);
+    }
+    
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .feature-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: #000000;
+    }
+    
+    .feature-card p {
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .about-content {
+      background: white;
+      padding: 3rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      line-height: 1.8;
+      animation: fadeIn 0.8s ease-out;
+    }
+    
+    .about-content p {
+      margin-bottom: 1.5rem;
+      color: #333;
+      font-size: 1.1rem;
+    }
+    
+    .contact-form {
+      background: white;
+      padding: 3rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 0 auto;
+      animation: fadeIn 0.8s ease-out;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #000000;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #e5e5e5;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #dc2626;
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+    
+    .contact-info {
+      margin-top: 3rem;
+      text-align: center;
+    }
+    
+    .contact-info p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    
+    .contact-info strong {
+      color: #dc2626;
+    }
+    
+    footer {
+      background: #000000;
+      color: #f5f5f5;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+      width: 100%;
+    }
+    
+    footer p {
+      margin-bottom: 1rem;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .social-links a {
+      color: #f5f5f5;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .social-links a:hover {
+      color: #dc2626;
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        gap: 1rem;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .section {
+        padding: 3rem 1rem;
+      }
+      
+      .products-grid,
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <nav class="navbar">
+   <div class="nav-container">
+    <div class="logo" id="company-name">
+     Hakan <span>Elektronik</span>
+    </div>
+    <ul class="nav-menu">
+     <li><a class="nav-link active" data-page="home">Ana Sayfa</a></li>
+     <li><a class="nav-link" data-page="products">Ürünler</a></li>
+     <li><a class="nav-link" data-page="about">Hakkımızda</a></li>
+     <li><a class="nav-link" data-page="contact">İletişim</a></li>
+    </ul>
+   </div>
+  </nav>
+  <div id="home" class="page active">
+   <section class="hero">
+    <div class="hero-content">
+     <h1 id="hero-title">Teknoloji ve Güvenin Buluştuğu Adres</h1>
+     <p id="hero-subtitle">POS sistemleri, barkod yazıcılar ve okuyucular ile işletmenizi bir adım öteye taşıyın. Profesyonel çözümler ve güvenilir hizmet için doğru yerdesiniz.</p><button class="cta-button" data-page="products">Ürünleri İncele</button>
+    </div>
+   </section>
+   <section class="section">
+    <h2 class="section-title">Neden Hakan Elektronik?</h2>
+    <div class="features-grid">
+     <div class="feature-card">
+      <div class="feature-icon">
+       ✨
+      </div>
+      <h3>Kaliteli Ürünler</h3>
+      <p>Sektörün önde gelen markalarından seçilmiş, test edilmiş ve onaylanmış ürünler sunuyoruz.</p>
+     </div>
+     <div class="feature-card">
+      <div class="feature-icon">
+       🚀
+      </div>
+      <h3>Hızlı Teslimat</h3>
+      <p>Siparişleriniz en kısa sürede ve güvenli bir şekilde adresinize teslim edilir.</p>
+     </div>
+     <div class="feature-card">
+      <div class="feature-icon">
+       💼
+      </div>
+      <h3>Profesyonel Destek</h3>
+      <p>Uzman ekibimiz ürün seçiminden kuruluma kadar her aşamada yanınızda.</p>
+     </div>
+     <div class="feature-card">
+      <div class="feature-icon">
+       🔧
+      </div>
+      <h3>Teknik Servis</h3>
+      <p>Satış sonrası teknik destek ve bakım hizmetleri ile güvende olun.</p>
+     </div>
+    </div>
+   </section>
+  </div>
+  <div id="products" class="page">
+   <section class="section">
+    <h2 class="section-title" id="products-title">Ürünlerimiz</h2>
+    <div class="products-grid">
+     <div class="product-card"><img src="assets/image/pos.jpeg" alt="POS Cihazı" class="product-image">
+      <div class="product-info">
+       <h3>POS Cihazları</h3>
+       <p>Son teknoloji POS sistemleri ile işlemlerinizi hızlı ve güvenli bir şekilde gerçekleştirin.</p>
+       <div class="product-price">
+        ₺8.500
+       </div><button class="btn-secondary">Detaylı Bilgi</button>
+      </div>
+     </div>
+     <div class="product-card"><img src="assets/image/pos.jpeg" alt="Barkod Yazıcı" class="product-image">
+      <div class="product-info">
+       <h3>Barkod Yazıcılar</h3>
+       <p>Yüksek kaliteli baskı ve dayanıklılık sunan profesyonel barkod yazıcılar.</p>
+       <div class="product-price">
+        ₺3.200
+       </div><button class="btn-secondary">Detaylı Bilgi</button>
+      </div>
+     </div>
+     <div class="product-card"><img src="assets/image/pos.jpeg" alt="Barkod Okuyucu" class="product-image">
+      <div class="product-info">
+       <h3>Barkod Okuyucular</h3>
+       <p>Hızlı ve hassas okuma teknolojisi ile iş akışınızı optimize edin.</p>
+       <div class="product-price">
+        ₺1.800
+       </div><button class="btn-secondary">Detaylı Bilgi</button>
+      </div>
+     </div>
+     <div class="product-card"><img src="assets/image/pos.jpeg" alt="Yazarkasa" class="product-image">
+      <div class="product-info">
+       <h3>Yazarkasalar</h3>
+       <p>Güvenilir ve kullanıcı dostu yazarkasa sistemleri ile satış yönetimi.</p>
+       <div class="product-price">
+        ₺5.500
+       </div><button class="btn-secondary">Detaylı Bilgi</button>
+      </div>
+     </div>
+     <div class="product-card"><img src="assets/image/pos.jpeg" alt="Aksesuarlar" class="product-image">
+      <div class="product-info">
+       <h3>Aksesuarlar</h3>
+       <p>Tüm cihazlarınız için uyumlu yedek parça ve aksesuarlar.</p>
+       <div class="product-price">
+        ₺250
+       </div><button class="btn-secondary">Detaylı Bilgi</button>
+      </div>
+     </div>
+     <div class="product-card"><img src="assets/image/pos.jpeg" alt="Etiket ve Şeritler" class="product-image">
+      <div class="product-info">
+       <h3>Etiket ve Şeritler</h3>
+       <p>Çeşitli boyut ve malzemelerde kaliteli etiket ve yazıcı şeritleri.</p>
+       <div class="product-price">
+        ₺180
+       </div><button class="btn-secondary">Detaylı Bilgi</button>
+      </div>
+     </div>
+    </div>
+   </section>
+  </div>
+  <div id="about" class="page">
+   <section class="section">
+    <h2 class="section-title" id="about-title">Hakkımızda</h2>
+    <div class="about-content">
+     <p id="about-description">Hakan Elektronik olarak, sektörde 15 yılı aşkın tecrübemizle işletmelere en kaliteli POS sistemleri, barkod yazıcılar ve okuyucular sunuyoruz. Müşteri memnuniyetini ön planda tutarak, güvenilir ürünler ve profesyonel hizmet anlayışımızla yanınızdayız.</p>
+     <p>Vizyonumuz, teknolojik çözümler sunarak işletmelerin verimliliğini artırmak ve günlük operasyonlarını kolaylaştırmaktır. Geniş ürün yelpazemiz ve uzman kadromuzla, her ölçekte işletmenin ihtiyaçlarına özel çözümler üretiyoruz.</p>
+     <p>Sektördeki en güncel teknolojileri takip ediyor, müşterilerimize en iyi ve en uygun maliyetli çözümleri sunmak için sürekli kendimizi geliştiriyoruz. Satış sonrası destek ve teknik servis hizmetlerimizle de yanınızdayız.</p>
+     <div class="features-grid" style="margin-top: 3rem;">
+      <div class="feature-card">
+       <div class="feature-icon">
+        📦
+       </div>
+       <h3>5000+</h3>
+       <p>Mutlu Müşteri</p>
+      </div>
+      <div class="feature-card">
+       <div class="feature-icon">
+        ⭐
+       </div>
+       <h3>15+</h3>
+       <p>Yıllık Tecrübe</p>
+      </div>
+      <div class="feature-card">
+       <div class="feature-icon">
+        🏆
+       </div>
+       <h3>%98</h3>
+       <p>Müşteri Memnuniyeti</p>
+      </div>
+     </div>
+    </div>
+   </section>
+  </div>
+  <div id="contact" class="page">
+   <section class="section">
+    <h2 class="section-title" id="contact-title">İletişim</h2>
+    <div class="contact-form">
+     <form id="contactForm">
+      <div class="form-group"><label for="name">Adınız Soyadınız</label> <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group"><label for="email">E-posta Adresiniz</label> <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group"><label for="phone">Telefon Numaranız</label> <input type="tel" id="phone" name="phone" required>
+      </div>
+      <div class="form-group"><label for="message">Mesajınız</label> <textarea id="message" name="message" required></textarea>
+      </div><button type="submit" class="cta-button" style="width: 100%;">Gönder</button>
+     </form>
+     <div class="contact-info">
+      <p><strong>Telefon:</strong> 0212 XXX XX XX</p>
+      <p><strong>E-posta:</strong> info@hakanelektronik.com</p>
+      <p><strong>Adres:</strong> İstanbul, Türkiye</p>
+      <div class="social-links"><a href="#" target="_blank" rel="noopener noreferrer">📱</a> <a href="#" target="_blank" rel="noopener noreferrer">📧</a> <a href="#" target="_blank" rel="noopener noreferrer">🌐</a>
+      </div>
+     </div>
+    </div>
+   </section>
+  </div>
+  <footer>
+   <p id="footer-text">© 2024 Hakan Elektronik - Tüm Hakları Saklıdır</p>
+   <p>POS Sistemleri | Barkod Yazıcılar | Barkod Okuyucular | Aksesuarlar</p>
+  </footer>
+  <script>
+    const defaultConfig = {
+      company_name: "Hakan Elektronik",
+      tagline: "POS ve Barkod Çözümleri",
+      hero_title: "Teknoloji ve Güvenin Buluştuğu Adres",
+      hero_subtitle: "POS sistemleri, barkod yazıcılar ve okuyucular ile işletmenizi bir adım öteye taşıyın. Profesyonel çözümler ve güvenilir hizmet için doğru yerdesiniz.",
+      products_title: "Ürünlerimiz",
+      about_title: "Hakkımızda",
+      about_description: "Hakan Elektronik olarak, sektörde 15 yılı aşkın tecrübemizle işletmelere en kaliteli POS sistemleri, barkod yazıcılar ve okuyucular sunuyoruz. Müşteri memnuniyetini ön planda tutarak, güvenilir ürünler ve profesyonel hizmet anlayışımızla yanınızdayız.",
+      contact_title: "İletişim",
+      footer_text: "© 2024 Hakan Elektronik - Tüm Hakları Saklıdır",
+      background_color: "#f5f5f5",
+      primary_color: "#dc2626",
+      text_color: "#333333",
+      navbar_color: "#000000",
+      card_color: "#ffffff"
+    };
+
+    async function onConfigChange(config) {
+      const companyName = config.company_name || defaultConfig.company_name;
+      const heroTitle = config.hero_title || defaultConfig.hero_title;
+      const heroSubtitle = config.hero_subtitle || defaultConfig.hero_subtitle;
+      const productsTitle = config.products_title || defaultConfig.products_title;
+      const aboutTitle = config.about_title || defaultConfig.about_title;
+      const aboutDescription = config.about_description || defaultConfig.about_description;
+      const contactTitle = config.contact_title || defaultConfig.contact_title;
+      const footerText = config.footer_text || defaultConfig.footer_text;
+      
+      const backgroundColor = config.background_color || defaultConfig.background_color;
+      const primaryColor = config.primary_color || defaultConfig.primary_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const navbarColor = config.navbar_color || defaultConfig.navbar_color;
+      const cardColor = config.card_color || defaultConfig.card_color;
+
+      document.getElementById('company-name').innerHTML = companyName.split(' ')[0] + ' <span>' + companyName.split(' ').slice(1).join(' ') + '</span>';
+      document.getElementById('hero-title').textContent = heroTitle;
+      document.getElementById('hero-subtitle').textContent = heroSubtitle;
+      document.getElementById('products-title').textContent = productsTitle;
+      document.getElementById('about-title').textContent = aboutTitle;
+      document.getElementById('about-description').textContent = aboutDescription;
+      document.getElementById('contact-title').textContent = contactTitle;
+      document.getElementById('footer-text').textContent = footerText;
+      
+      document.body.style.background = backgroundColor;
+      document.body.style.color = textColor;
+      
+      const navbar = document.querySelector('.navbar');
+      navbar.style.background = `linear-gradient(135deg, ${navbarColor} 0%, #1a1a1a 100%)`;
+      
+      document.querySelectorAll('.cta-button').forEach(btn => {
+        btn.style.background = primaryColor;
+      });
+      
+      document.querySelectorAll('.product-price').forEach(price => {
+        price.style.color = primaryColor;
+      });
+      
+      document.querySelectorAll('.section-title::after').forEach(el => {
+        el.style.background = primaryColor;
+      });
+      
+      document.querySelectorAll('.product-card, .feature-card, .about-content, .contact-form').forEach(card => {
+        card.style.background = cardColor;
+      });
+      
+      document.querySelectorAll('.nav-link:hover, .nav-link.active').forEach(link => {
+        link.style.background = primaryColor;
+      });
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig: defaultConfig,
+        onConfigChange: onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            {
+              get: () => config.card_color || defaultConfig.card_color,
+              set: (value) => {
+                config.card_color = value;
+                window.elementSdk.setConfig({ card_color: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            {
+              get: () => config.primary_color || defaultConfig.primary_color,
+              set: (value) => {
+                config.primary_color = value;
+                window.elementSdk.setConfig({ primary_color: value });
+              }
+            },
+            {
+              get: () => config.navbar_color || defaultConfig.navbar_color,
+              set: (value) => {
+                config.navbar_color = value;
+                window.elementSdk.setConfig({ navbar_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["company_name", config.company_name || defaultConfig.company_name],
+          ["tagline", config.tagline || defaultConfig.tagline],
+          ["hero_title", config.hero_title || defaultConfig.hero_title],
+          ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+          ["products_title", config.products_title || defaultConfig.products_title],
+          ["about_title", config.about_title || defaultConfig.about_title],
+          ["about_description", config.about_description || defaultConfig.about_description],
+          ["contact_title", config.contact_title || defaultConfig.contact_title],
+          ["footer_text", config.footer_text || defaultConfig.footer_text]
+        ])
+      });
+    }
+
+    const navLinks = document.querySelectorAll('.nav-link');
+    const pages = document.querySelectorAll('.page');
+    const ctaButtons = document.querySelectorAll('[data-page]');
+
+    function showPage(pageName) {
+      pages.forEach(page => page.classList.remove('active'));
+      navLinks.forEach(link => link.classList.remove('active'));
+      
+      document.getElementById(pageName).classList.add('active');
+      document.querySelector(`[data-page="${pageName}"]`).classList.add('active');
+      
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const pageName = link.getAttribute('data-page');
+        showPage(pageName);
+      });
+    });
+
+    ctaButtons.forEach(button => {
+      if (button.tagName !== 'A') {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          const pageName = button.getAttribute('data-page');
+          showPage(pageName);
+        });
+      }
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData);
+      
+      const messageDiv = document.createElement('div');
+      messageDiv.style.cssText = 'background: #10b981; color: white; padding: 1rem; border-radius: 8px; margin-top: 1rem; text-align: center;';
+      messageDiv.textContent = 'Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.';
+      
+      e.target.appendChild(messageDiv);
+      e.target.reset();
+      
+      setTimeout(() => {
+        messageDiv.remove();
+      }, 5000);
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a97b17d053f26ad',t:'MTc2NDk4MTIyMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
