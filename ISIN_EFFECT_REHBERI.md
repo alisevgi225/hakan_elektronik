@@ -441,3 +441,5 @@ setTimeout(() => {
 - `translateX(100px)` = 100px sağa kaydırma
 - `translateY(-100vh)` = Ekran yüksekliği kadar yukarı kaydırma
 
+
+
