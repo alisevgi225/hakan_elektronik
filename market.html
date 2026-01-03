@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="tr">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hakan Elektronik - Tüm Ürünlerimiz</title>
+  <script src="/_sdk/element_sdk.js" onerror="this.onerror=null; this.remove();"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>@view-transition { navigation: auto; }</style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="/_sdk/data_sdk.js" type="text/javascript" onerror="this.onerror=null; this.remove();"></script>
+  <script src="products.js"></script>
+ </head>
+ <body>
+  <div class="stars-container" id="starsContainer"></div>
+  <nav class="navbar">
+   <div class="nav-container">
+    <div class="logo" id="company-name" onclick="window.location.href='index.html'">
+     Hakan <span>Elektronik</span>
+    </div>
+    <ul class="nav-menu">
+     <li><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+     <li><a class="nav-link" href="index.html#categories">Kategoriler</a></li>
+     <li><a class="nav-link" href="index.html#about-section">Hakkımızda</a></li>
+     <li><a class="nav-link" href="index.html#contact-section">İletişim</a></li>
+     <li><a class="nav-link active" href="market.html">Tüm Ürünler</a></li>
+    </ul>
+   </div>
+  </nav>
+  <main>
+   <section class="section" style="padding-top: 3rem;">
+    <h2 class="section-title" id="products-title">Tüm Ürünlerimiz</h2>
+    <div id="products-container"></div>
+   </section>
+  </main>
+  <footer>
+   <p id="footer-text">© 2024 Hakan Elektronik - Tüm Hakları Saklıdır</p>
+   <p>POS Sistemleri | Barkod Yazıcılar | Barkod Okuyucular | Aksesuarlar</p>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    // products.js'den ürünleri yükle ve göster
+    function loadProducts() {
+      try {
+        // products.js dosyasından productsData değişkenini kullan
+        if (typeof productsData === 'undefined') {
+          throw new Error('productsData bulunamadı. products.js dosyasının yüklendiğinden emin olun.');
+        }
+        
+        const data = productsData;
+        const container = document.getElementById('products-container');
+        
+        if (!container) {
+          console.error('products-container elementi bulunamadı');
+          return;
+        }
+        
+        data.categories.forEach(category => {
+          const categorySection = document.createElement('div');
+          categorySection.className = 'category-section';
+          
+          // Kategori başlığı
+          const categoryHeader = document.createElement('div');
+          categoryHeader.className = 'products-category-header';
+          categoryHeader.innerHTML = `
+            <div class="category-icon">
+              <i class="${category.icon}"></i>
+            </div>
+            <div class="category-info">
+              <h3>${category.name}</h3>
+              <p>${category.description}</p>
+            </div>
+          `;
+          
+          // Ürün grid'i
+          const productsGrid = document.createElement('div');
+          productsGrid.className = 'products-grid';
+          
+          category.products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'product-card';
+            
+            const featuresHTML = product.features.map(feature => 
+              `<span class="feature-badge">${feature}</span>`
+            ).join(' ');
+            
+            // Dokunmatik ekran kategorisi için özel class ekle
+            const imgClass = category.id === 'dokunmatik-ekranlar' ? 'product-img touchscreen-img' : 'product-img';
+            
+            productCard.innerHTML = `
+              <div class="product-image-container">
+                <img src="${product.image}" alt="${product.name}" class="${imgClass}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="product-image-fallback" style="display: none;">
+                  <i class="${category.icon}"></i>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <div class="product-features">${featuresHTML}</div>
+                <div class="product-price">${product.price}</div>
+                <button class="btn-secondary">Detaylı Bilgi</button>
+              </div>
+            `;
+            
+            productsGrid.appendChild(productCard);
+          });
+          
+          categorySection.appendChild(categoryHeader);
+          categorySection.appendChild(productsGrid);
+          container.appendChild(categorySection);
+        });
+      } catch (error) {
+        console.error('Ürünler yüklenirken hata oluştu:', error);
+        document.getElementById('products-container').innerHTML = 
+          '<p style="text-align: center; padding: 2rem; color: #dc2626;">Ürünler yüklenirken bir hata oluştu. Lütfen sayfayı yenileyin.</p>';
+      }
+    }
+    
+    // Sayfa yüklendiğinde ürünleri yükle
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadProducts);
+    } else {
+      // products.js yüklenmesini bekle
+      setTimeout(loadProducts, 100);
+    }
+  </script>
+ </body>
+</html>
+

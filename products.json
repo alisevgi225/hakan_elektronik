@@ -1,0 +1,301 @@
+{
+  "categories": [
+    {
+      "id": "yazarkasalar",
+      "name": "Yazarkasalar",
+      "description": "Profesyonel POS sistemleri ve yazarkasa çözümleri",
+      "icon": "fas fa-cash-register",
+      "products": [
+        {
+          "id": "ingenico-5000f",
+          "name": "Ingenico Move 5000F",
+          "description": "Taşınabilir ve kablosuz POS cihazı. 4G bağlantı desteği, yüksek güvenlik standartları.",
+          "price": "₺12.500",
+          "image": "assets/image/pos_cihaz/ingenico5000f.png",
+          "features": ["4G", "Kablosuz", "Taşınabilir"]
+        },
+        {
+          "id": "hugin-tiger-t300",
+          "name": "Hugin Tiger T300",
+          "description": "Android tabanlı akıllı POS cihazı. Dokunmatik ekran, hızlı işlemci.",
+          "price": "₺8.900",
+          "image": "assets/image/pos_cihaz/hugintigert300.png",
+          "features": ["Android", "Dokunmatik"]
+        },
+        {
+          "id": "inpos-m530",
+          "name": "İnPos M530",
+          "description": "Kompakt tasarım, 2G/4G bağlantı destekli yazarkasa. Ekonomik ve güvenilir.",
+          "price": "₺6.200",
+          "image": "assets/image/pos_cihaz/inposm530.png",
+          "features": ["2G/4G", "Kompakt", "Güvenilir"]
+        },
+        {
+          "id": "pax-a910sf",
+          "name": "PAX A910 SF",
+          "description": "Modern ve şık tasarımlı POS cihazı. Hızlı işlem, güvenli ödeme.",
+          "price": "₺9.800",
+          "image": "assets/image/pos_cihaz/paxa910sf.png",
+          "features": ["Modern", "Hızlı", "Güvenli"]
+        },
+        {
+          "id": "paygo-sp630",
+          "name": "PayGo SP630",
+          "description": "Kompakt ve taşınabilir POS cihazı. Kolay kullanım, hızlı bağlantı.",
+          "price": "₺7.500",
+          "image": "assets/image/pos_cihaz/paygosp630.png",
+          "features": ["Kompakt", "Taşınabilir", "Hızlı"]
+        },
+        {
+          "id": "propay-p1000",
+          "name": "ProPay P1000",
+          "description": "Profesyonel kullanım için gelişmiş özellikler. 4G, WiFi, Bluetooth desteği.",
+          "price": "₺10.200",
+          "image": "assets/image/pos_cihaz/propayp1000.png",
+          "features": ["4G", "WiFi", "Bluetooth"]
+        },
+        {
+          "id": "pavon-5",
+          "name": "PAXON 5",
+          "description": "Android tabanlı akıllı POS terminali. Geniş ekran, yüksek performans.",
+          "price": "₺11.500",
+          "image": "assets/image/pos_cihaz/pavon5.png",
+          "features": ["Android", "Geniş Ekran", "Yüksek Performans"]
+        },
+        {
+          "id": "pavon-6",
+          "name": "PAXON 6",
+          "description": "Gelişmiş özelliklerle donatılmış profesyonel POS cihazı.",
+          "price": "₺12.800",
+          "image": "assets/image/pos_cihaz/pavon6.png",
+          "features": ["Gelişmiş", "Profesyonel", "4G"]
+        },
+        {
+          "id": "pavon-86",
+          "name": "PAXON 86",
+          "description": "Büyük ekranlı Android POS terminali. Restoran ve kafe işletmeleri için ideal.",
+          "price": "₺14.500",
+          "image": "assets/image/pos_cihaz/pavon86.png",
+          "features": ["Büyük Ekran", "Android", "Restoran"]
+        },
+        {
+          "id": "pavon-96",
+          "name": "PAXON 96",
+          "description": "Premium Android POS terminali. En gelişmiş özellikler ve yüksek performans.",
+          "price": "₺16.200",
+          "image": "assets/image/pos_cihaz/pavon96.png",
+          "features": ["Premium", "Android", "Yüksek Performans"]
+        },
+        {
+          "id": "pavoct-20",
+          "name": "PAVO CT20",
+          "description": "Kompakt ve hafif tasarımlı POS cihazı. Mobil ödemeler için ideal.",
+          "price": "₺8.200",
+          "image": "assets/image/pos_cihaz/pavoct20.png",
+          "features": ["Kompakt", "Hafif", "Mobil"]
+        },
+        {
+          "id": "pavoun-20",
+          "name": "PAVO UN20",
+          "description": "Ultra kompakt POS cihazı. Küçük işletmeler için ekonomik çözüm.",
+          "price": "₺6.800",
+          "image": "assets/image/pos_cihaz/pavoun20.png",
+          "features": ["Ultra Kompakt", "Ekonomik", "Küçük İşletme"]
+        }
+      ]
+    },
+    {
+      "id": "para-kasalari",
+      "name": "Para Kasaları",
+      "description": "Güvenli ve dayanıklı para saklama çözümleri",
+      "icon": "fas fa-wallet",
+      "products": [
+        {
+          "id": "ingenico-para-cekmecesi",
+          "name": "İngenico Uyumlu Para Çekmecesi",
+          "description": "İngenico POS cihazları ile tam uyumlu para çekmecesi. Otomatik açılma sistemi, 5 madeni para ve 4 kağıt para bölmeli.",
+          "price": "₺1.850",
+          "image": "assets/image/pos.jpeg",
+          "features": ["Otomatik", "5+4 Bölme"]
+        },
+        {
+          "id": "metal-kasa",
+          "name": "Dayanıklı Metal Kasa",
+          "description": "Yoğun kullanım için güçlendirilmiş metal gövde. Ayarlanabilir bölmeler, anahtarlı kilit.",
+          "price": "₺2.400",
+          "image": "assets/image/pos.jpeg",
+          "features": ["Metal", "Ayarlanabilir"]
+        },
+        {
+          "id": "mini-kasa",
+          "name": "Kompakt Mini Kasa",
+          "description": "Küçük tezgahlar için yerden tasarruf sağlayan mini para çekmecesi. Sessiz açılma mekanizması.",
+          "price": "₺1.450",
+          "image": "assets/image/pos.jpeg",
+          "features": ["Kompakt", "Sessiz"]
+        }
+      ]
+    },
+    {
+      "id": "barkod-yazicilari",
+      "name": "Barkod Yazıcıları",
+      "description": "Profesyonel baskı kalitesinde barkod ve etiket yazıcıları",
+      "icon": "fas fa-print",
+      "products": [
+        {
+          "id": "sbarco-t4de",
+          "name": "Sbarco T4de+ 203dpi Ribonsuz",
+          "description": "203 DPI çözünürlük, termal direkt baskı teknolojisi. Ribon kullanımına gerek yok, ekonomik ve pratik.",
+          "price": "₺3.200",
+          "image": "assets/image/pos.jpeg",
+          "features": ["203 DPI", "Ribonsuz"]
+        },
+        {
+          "id": "zebra-zd230",
+          "name": "Zebra ZD230 203dpi",
+          "description": "Hızlı termal etiket baskısı, USB bağlantı, 203 DPI çözünürlük. Perakende ve lojistik için ideal.",
+          "price": "₺3.750",
+          "image": "assets/image/pos.jpeg",
+          "features": ["203 DPI", "USB"]
+        },
+        {
+          "id": "bixolon-xd5",
+          "name": "Bixolon XD5-40t 300dpi",
+          "description": "300 DPI termal transfer baskı, Ethernet ve USB bağlantı seçenekleri. Yoğun baskı ihtiyaçları için.",
+          "price": "₺5.600",
+          "image": "assets/image/pos.jpeg",
+          "features": ["300 DPI", "Ethernet", "USB"]
+        }
+      ]
+    },
+    {
+      "id": "pos-aksesuarlari",
+      "name": "POS Aksesuarları",
+      "description": "POS cihazlarınız için özel tasarlanmış aksesuarlar",
+      "icon": "fas fa-tools",
+      "products": [
+        {
+          "id": "ingenico-5000f-canta",
+          "name": "Ingenico 5000F Çanta",
+          "description": "Ingenico 5000F cihazı için özel tasarlanmış koruyucu çanta. Taşıma kolaylığı ve koruma sağlar.",
+          "price": "₺450",
+          "image": "assets/image/pos_aksesuar/ingenico5000fcanta.png",
+          "features": ["Koruyucu", "Taşınabilir"]
+        },
+        {
+          "id": "ingenico-5000f-pinpad",
+          "name": "Ingenico 5000F PinPad",
+          "description": "Ingenico 5000F için ek güvenlik sağlayan PinPad aksesuarı. EMV sertifikalı.",
+          "price": "₺1.200",
+          "image": "assets/image/pos_aksesuar/ingenico5000fpinpad.png",
+          "features": ["EMV", "Güvenli"]
+        },
+        {
+          "id": "hugin-t300-canta",
+          "name": "Hugin Tiger T300 Çanta",
+          "description": "Hugin Tiger T300 cihazı için özel koruyucu çanta. Şık tasarım ve dayanıklı yapı.",
+          "price": "₺380",
+          "image": "assets/image/pos_aksesuar/hugintigert300canta.png",
+          "features": ["Koruyucu", "Şık Tasarım"]
+        },
+        {
+          "id": "hugin-t300-pinpad",
+          "name": "Hugin Tiger T300 PinPad",
+          "description": "Hugin Tiger T300 için ek güvenlik PinPad'i. Kolay kurulum ve kullanım.",
+          "price": "₺1.100",
+          "image": "assets/image/pos_aksesuar/hugintigert300pinpad.png",
+          "features": ["Güvenli", "Kolay Kurulum"]
+        },
+        {
+          "id": "hugin-t300-sarz",
+          "name": "Hugin Tiger T300 Şarj Aleti",
+          "description": "Hugin Tiger T300 için orijinal şarj aleti. Hızlı şarj özelliği.",
+          "price": "₺250",
+          "image": "assets/image/pos_aksesuar/hugintigert300sarz.png",
+          "features": ["Orijinal", "Hızlı Şarj"]
+        },
+        {
+          "id": "inpos-m530-pinpad",
+          "name": "İnPos M530 PinPad",
+          "description": "İnPos M530 için güvenli pin girişi sağlayan PinPad aksesuarı. EMV sertifikalı.",
+          "price": "₺950",
+          "image": "assets/image/pos_aksesuar/inposm530pinpad.png",
+          "features": ["EMV", "Güvenli"]
+        },
+        {
+          "id": "pax-a910sf-canta",
+          "name": "PAX A910 SF Çanta",
+          "description": "PAX A910 SF cihazı için özel tasarlanmış koruyucu çanta. Profesyonel görünüm.",
+          "price": "₺420",
+          "image": "assets/image/pos_aksesuar/paxa910sfcanta.png",
+          "features": ["Koruyucu", "Profesyonel"]
+        },
+        {
+          "id": "pax-a910sf-pinpad",
+          "name": "PAX A910 SF PinPad",
+          "description": "PAX A910 SF için ek güvenlik PinPad'i. Modern tasarım ve yüksek güvenlik.",
+          "price": "₺1.150",
+          "image": "assets/image/pos_aksesuar/paxa910sfpinpad.png",
+          "features": ["Modern", "Yüksek Güvenlik"]
+        },
+        {
+          "id": "pax-a910sf-sarz",
+          "name": "PAX A910 SF Şarj Aleti",
+          "description": "PAX A910 SF için orijinal şarj aleti. Uzun ömürlü ve güvenilir.",
+          "price": "₺280",
+          "image": "assets/image/pos_aksesuar/paxa910sfsarz.png",
+          "features": ["Orijinal", "Uzun Ömürlü"]
+        },
+        {
+          "id": "paygo-sp630-canta",
+          "name": "PayGo SP630 Çanta",
+          "description": "PayGo SP630 cihazı için özel koruyucu çanta. Kompakt ve pratik.",
+          "price": "₺350",
+          "image": "assets/image/pos_aksesuar/paygosp630canta.png",
+          "features": ["Kompakt", "Pratik"]
+        },
+        {
+          "id": "paygo-sp630-pinpad",
+          "name": "PayGo SP630 PinPad",
+          "description": "PayGo SP630 için güvenli ödeme PinPad'i. Kolay entegrasyon.",
+          "price": "₺1.000",
+          "image": "assets/image/pos_aksesuar/paygosp630pinpad.png",
+          "features": ["Güvenli", "Kolay Entegrasyon"]
+        }
+      ]
+    },
+    {
+      "id": "genel-aksesuarlar",
+      "name": "Genel Aksesuarlar",
+      "description": "Tüm cihazlarınız için yedek parça ve aksesuarlar",
+      "icon": "fas fa-tools",
+      "products": [
+        {
+          "id": "barkod-okuyucular",
+          "name": "Barkod Okuyucular",
+          "description": "1D ve 2D barkod okuma desteği. Kablolu ve kablosuz modeller mevcut.",
+          "price": "₺850",
+          "image": "assets/image/pos.jpeg",
+          "features": ["1D/2D", "Kablosuz"]
+        },
+        {
+          "id": "etiket-seritler",
+          "name": "Etiket ve Şeritler",
+          "description": "Çeşitli boyut ve malzemelerde termal etiket ruloları ve yazıcı şeritleri.",
+          "price": "₺180",
+          "image": "assets/image/pos.jpeg",
+          "features": ["Termal", "Çok Boyutlu"]
+        },
+        {
+          "id": "kablolar-adaptorler",
+          "name": "Kablolar ve Adaptörler",
+          "description": "USB, seri port, ethernet kabloları ve güç adaptörleri. Tüm modeller için uyumlu.",
+          "price": "₺125",
+          "image": "assets/image/pos.jpeg",
+          "features": ["USB", "Ethernet"]
+        }
+      ]
+    }
+  ]
+}
+
