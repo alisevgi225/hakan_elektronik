@@ -15,7 +15,8 @@
   <nav class="navbar">
    <div class="nav-container">
     <div class="logo" id="company-name" onclick="event.preventDefault(); showPage('home');" style="cursor: pointer;">
-     Hakan <span>Elektronik</span>
+     <img src="assets/image/logo_nav.png" alt="Hakan Elektronik Logo" class="logo-img">
+     <span class="logo-text">Hakan <span>Elektronik</span></span>
     </div>
     <ul class="nav-menu">
      <li><a class="nav-link active" href="#" onclick="event.preventDefault(); showPage('home'); return false;">Ana Sayfa</a></li>
@@ -36,50 +37,103 @@
    <section class="section" id="categories">
     <h2 class="section-title">Ürün Kategorilerimiz</h2>
     <div class="products-grid">
-     <div class="product-card" onclick="window.location.href='market.html'">
+     <div class="product-card" onclick="window.location.href='market.html?category=yazarkasalar'">
       <div class="product-image-container">
-       <div class="product-image-fallback">
+       <img src="assets/image/pos_cihaz/ingenico5000f.png" alt="Yazarkasalar" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="product-image-fallback" style="display: none;">
         <i class="fas fa-cash-register"></i>
        </div>
       </div>
       <div class="product-info">
        <h3>Yazarkasalar</h3>
-       <p>Modern ve güvenilir yazarkasa sistemleri ile satış işlemlerinizi kolaylaştırın.</p><button class="btn-secondary" onclick="window.location.href='market.html'">Tümünü Gör</button>
+       <p>Profesyonel POS sistemleri ve yazarkasa çözümleri</p><button class="btn-secondary" onclick="event.stopPropagation(); window.location.href='market.html?category=yazarkasalar'">Tümünü Gör</button>
       </div>
      </div>
-     <div class="product-card" onclick="window.location.href='market.html'">
+     <div class="product-card" onclick="window.location.href='market.html?category=para-kasalari'">
       <div class="product-image-container">
-       <div class="product-image-fallback">
+       <img src="assets/image/para_cekmecesi/psc4646.png" alt="Para Kasaları" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="product-image-fallback" style="display: none;">
         <i class="fas fa-wallet"></i>
        </div>
       </div>
       <div class="product-info">
        <h3>Para Kasaları</h3>
-       <p>Paranızı güvenle saklamak için sağlam ve dayanıklı para kasaları.</p><button class="btn-secondary" onclick="window.location.href='market.html'">Tümünü Gör</button>
+       <p>Güvenli ve dayanıklı para saklama çözümleri</p><button class="btn-secondary" onclick="event.stopPropagation(); window.location.href='market.html?category=para-kasalari'">Tümünü Gör</button>
       </div>
      </div>
-     <div class="product-card" onclick="window.location.href='market.html'">
+     <div class="product-card" onclick="window.location.href='market.html?category=barkod-yazicilari'">
       <div class="product-image-container">
-       <div class="product-image-fallback">
+       <img src="assets/image/barkod_yazici/sbarco.png" alt="Barkod Yazıcıları" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="product-image-fallback" style="display: none;">
         <i class="fas fa-print"></i>
        </div>
       </div>
       <div class="product-info">
        <h3>Barkod Yazıcıları</h3>
-       <p>Yüksek kaliteli baskı performansı sunan profesyonel barkod yazıcılar.</p><button class="btn-secondary" onclick="window.location.href='market.html'">Tümünü Gör</button>
+       <p>Profesyonel baskı kalitesinde barkod ve etiket yazıcıları</p><button class="btn-secondary" onclick="event.stopPropagation(); window.location.href='market.html?category=barkod-yazicilari'">Tümünü Gör</button>
       </div>
      </div>
-     <div class="product-card" onclick="window.location.href='market.html'">
+     <div class="product-card" onclick="window.location.href='market.html?category=barkod-okuyucular'">
       <div class="product-image-container">
-       <div class="product-image-fallback">
+       <img src="assets/image/barkod_okuyucu/vp50.png" alt="Barkod Okuyucular" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="product-image-fallback" style="display: none;">
+        <i class="fas fa-barcode"></i>
+       </div>
+      </div>
+      <div class="product-info">
+       <h3>Barkod Okuyucular</h3>
+       <p>Profesyonel barkod ve karekod okuma çözümleri</p><button class="btn-secondary" onclick="event.stopPropagation(); window.location.href='market.html?category=barkod-okuyucular'">Tümünü Gör</button>
+      </div>
+     </div>
+     <div class="product-card" onclick="window.location.href='market.html?category=teraziler'">
+      <div class="product-image-container">
+       <img src="assets/image/terazi/digism320p.png" alt="Teraziler" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="product-image-fallback" style="display: none;">
+        <i class="fas fa-balance-scale"></i>
+       </div>
+      </div>
+      <div class="product-info">
+       <h3>Teraziler</h3>
+       <p>Elektronik teraziler, barkodlu teraziler ve tartım çözümleri</p><button class="btn-secondary" onclick="event.stopPropagation(); window.location.href='market.html?category=teraziler'">Tümünü Gör</button>
+      </div>
+     </div>
+     <div class="product-card" onclick="window.location.href='market.html?category=dokunmatik-ekranlar'">
+      <div class="product-image-container">
+       <img src="assets/image/doknumatik_ekran/anypaya2siyah.png" alt="Dokunmatik Ekranlar" class="product-img touchscreen-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="product-image-fallback" style="display: none;">
+        <i class="fas fa-tablet-alt"></i>
+       </div>
+      </div>
+      <div class="product-info">
+       <h3>Dokunmatik Ekranlar</h3>
+       <p>Profesyonel dokunmatik ekran çözümleri ve tek ekran dokunmatik PC'ler</p><button class="btn-secondary" onclick="event.stopPropagation(); window.location.href='market.html?category=dokunmatik-ekranlar'">Tümünü Gör</button>
+      </div>
+     </div>
+     <div class="product-card" onclick="window.location.href='market.html?category=pos-aksesuarlari'">
+      <div class="product-image-container">
+       <img src="assets/image/pos_aksesuar/ingenico5000fcanta.png" alt="POS Aksesuarları" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="product-image-fallback" style="display: none;">
         <i class="fas fa-tools"></i>
        </div>
       </div>
       <div class="product-info">
-       <h3>Aksesuarlar</h3>
-       <p>Tüm cihazlarınız için gerekli yedek parça ve aksesuarlar burada.</p><button class="btn-secondary" onclick="window.location.href='market.html'">Tümünü Gör</button>
+       <h3>POS Aksesuarları</h3>
+       <p>POS cihazlarınız için özel tasarlanmış aksesuarlar</p><button class="btn-secondary" onclick="event.stopPropagation(); window.location.href='market.html?category=pos-aksesuarlari'">Tümünü Gör</button>
       </div>
      </div>
+     <div class="product-card" onclick="window.location.href='market.html?category=para-sayma-makineleri'">
+      <div class="product-image-container">
+       <img src="assets/image/para_sayma_makinesi/asysap35.png" alt="Para Sayma Makineleri" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="product-image-fallback" style="display: none;">
+        <i class="fas fa-money-bill-wave"></i>
+       </div>
+      </div>
+      <div class="product-info">
+       <h3>Para Sayma Makineleri</h3>
+       <p>Profesyonel para sayma ve sıralama çözümleri</p><button class="btn-secondary" onclick="event.stopPropagation(); window.location.href='market.html?category=para-sayma-makineleri'">Tümünü Gör</button>
+      </div>
+     </div>
+     
     </div>
    </section>
    <section class="section">
@@ -115,6 +169,83 @@
      </div>
     </div>
    </section>
+   <section class="section references-section" id="references-section">
+    <h2 class="section-title">Referanslarımız</h2>
+    <div class="references-grid">
+     <div class="reference-item">
+      <div class="reference-image-wrapper">
+       <img src="assets/image/referanslar/awlu.png" alt="Awlu" class="reference-image" onerror="this.style.display='none';">
+      </div>
+      <h3 class="reference-name">Awlu Cafe Malatya</h3>
+     </div>
+     <div class="reference-item">
+      <div class="reference-image-wrapper">
+       <img src="assets/image/referanslar/bonavias.png" alt="Bonavias" class="reference-image" onerror="this.style.display='none';">
+      </div>
+      <h3 class="reference-name">Bonavias Cafe Malatya</h3>
+     </div>
+     <div class="reference-item">
+      <div class="reference-image-wrapper">
+       <img src="assets/image/referanslar/gonulkahvesi.png" alt="Gönül Kahvesi" class="reference-image" onerror="this.style.display='none';">
+      </div>
+      <h3 class="reference-name">Gönül Kahvesi Malatya</h3>
+     </div>
+     <div class="reference-item">
+      <div class="reference-image-wrapper">
+       <img src="assets/image/referanslar/hanresorant.png" alt="Han Restorant" class="reference-image" onerror="this.style.display='none';">
+      </div>
+      <h3 class="reference-name">Han Restorant</h3>
+     </div>
+     <div class="reference-item">
+      <div class="reference-image-wrapper">
+       <img src="assets/image/referanslar/hasanustayaprakdöner.png" alt="Hasan Usta Yaprak Döner" class="reference-image" onerror="this.style.display='none';">
+      </div>
+      <h3 class="reference-name">Hasan Usta Yaprak Döner</h3>
+     </div>
+     <div class="reference-item">
+      <div class="reference-image-wrapper">
+       <img src="assets/image/referanslar/luuqcafe.png" alt="Luuq Cafe" class="reference-image" onerror="this.style.display='none';">
+      </div>
+      <h3 class="reference-name">Luuq Cafe Malatya</h3>
+     </div>
+     <div class="reference-item">
+      <div class="reference-image-wrapper">
+       <img src="assets/image/referanslar/mandala.png" alt="Mandala" class="reference-image" onerror="this.style.display='none';">
+      </div>
+      <h3 class="reference-name">Mandala Cafe Malatya</h3>
+     </div>
+     <div class="reference-item">
+      <div class="reference-image-wrapper">
+       <img src="assets/image/referanslar/mrbon.png" alt="Mr Bon" class="reference-image" onerror="this.style.display='none';">
+      </div>
+      <h3 class="reference-name">Mr Bon Cafe Malatya</h3>
+     </div>
+     <div class="reference-item">
+      <div class="reference-image-wrapper">
+       <img src="assets/image/referanslar/nesve.png" alt="Nesve" class="reference-image" onerror="this.style.display='none';">
+      </div>
+      <h3 class="reference-name">Neşve Cafe Malatya</h3>
+     </div>
+     <div class="reference-item">
+      <div class="reference-image-wrapper">
+       <img src="assets/image/referanslar/pliflower.png" alt="Pliflower" class="reference-image" onerror="this.style.display='none';">
+      </div>
+      <h3 class="reference-name">P'li Flower Cafe Malatya</h3>
+     </div>
+     <div class="reference-item">
+      <div class="reference-image-wrapper">
+       <img src="assets/image/referanslar/sevgioptik.png" alt="Sevgi Optik" class="reference-image" onerror="this.style.display='none';">
+      </div>
+      <h3 class="reference-name">Sevgi Optik</h3>
+     </div>
+     <div class="reference-item">
+      <div class="reference-image-wrapper">
+       <img src="assets/image/referanslar/yesilsinema.png" alt="Yeşil Sinema" class="reference-image" onerror="this.style.display='none';">
+      </div>
+      <h3 class="reference-name">Yeşil Sinema Malatya</h3>
+     </div>
+    </div>
+   </section>
    <section class="section" id="about-section">
     <h2 class="section-title" id="about-title-home">Hakkımızda</h2>
     <div class="about-content">
@@ -141,7 +272,7 @@
        <div class="feature-icon">
         <i class="fas fa-trophy"></i>
        </div>
-       <h3>%98</h3>
+       <h3>%100</h3>
        <p>Müşteri Memnuniyeti</p>
       </div>
      </div>

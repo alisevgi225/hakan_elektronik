@@ -16,7 +16,8 @@
   <nav class="navbar">
    <div class="nav-container">
     <div class="logo" id="company-name" onclick="window.location.href='index.html'">
-     Hakan <span>Elektronik</span>
+     <img src="assets/image/logo.png" alt="Hakan Elektronik Logo" class="logo-img">
+     <span class="logo-text">Hakan <span>Elektronik</span></span>
     </div>
     <ul class="nav-menu">
      <li><a class="nav-link" href="index.html">Ana Sayfa</a></li>
@@ -30,6 +31,7 @@
   <main>
    <section class="section" style="padding-top: 3rem;">
     <h2 class="section-title" id="products-title">Tüm Ürünlerimiz</h2>
+    <div class="category-filters" id="category-filters"></div>
     <div id="products-container"></div>
    </section>
   </main>
@@ -37,8 +39,122 @@
    <p id="footer-text">© 2024 Hakan Elektronik - Tüm Hakları Saklıdır</p>
    <p>POS Sistemleri | Barkod Yazıcılar | Barkod Okuyucular | Aksesuarlar</p>
   </footer>
+  
+  <!-- Ürün Detay Modal -->
+  <div class="product-modal" id="productModal">
+    <div class="product-modal-content">
+      <div class="product-modal-header">
+        <h2 class="product-modal-title" id="modalTitle"></h2>
+        <button class="product-modal-close" onclick="closeProductModal()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="product-modal-body">
+        <div class="product-modal-image-container">
+          <img id="modalImage" class="product-modal-image" src="" alt="" onerror="this.onerror=null; this.src='assets/image/pos.jpeg';">
+        </div>
+        <div class="product-modal-info">
+          <p class="product-modal-description" id="modalDescription"></p>
+          <div class="product-modal-features" id="modalFeatures"></div>
+          <a href="https://wa.me/905459685329" target="_blank" rel="noopener noreferrer" class="product-modal-price-button" id="modalPriceButton">
+            <i class="fab fa-whatsapp"></i> Fiyat Almak İçin Tıklayın
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <script src="script.js"></script>
   <script>
+    let allCategories = [];
+    let currentFilter = 'all';
+    
+    // URL parametresinden kategoriyi al
+    function getCategoryFromURL() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('category') || 'all';
+    }
+    
+    // URL'i güncelle
+    function updateURL(categoryId) {
+      const newURL = categoryId === 'all' 
+        ? window.location.pathname 
+        : `${window.location.pathname}?category=${categoryId}`;
+      window.history.pushState({ category: categoryId }, '', newURL);
+    }
+    
+    // Kategori filtre butonlarını oluştur
+    function createFilterButtons(categories) {
+      const filtersContainer = document.getElementById('category-filters');
+      if (!filtersContainer) return;
+      
+      // Tümü butonu
+      const allButton = document.createElement('button');
+      allButton.className = 'filter-button active';
+      allButton.setAttribute('data-category', 'all');
+      allButton.innerHTML = '<i class="fas fa-th"></i> Tümü';
+      allButton.addEventListener('click', () => filterByCategory('all'));
+      filtersContainer.appendChild(allButton);
+      
+      // Kategori butonları
+      categories.forEach(category => {
+        const button = document.createElement('button');
+        button.className = 'filter-button';
+        button.setAttribute('data-category', category.id);
+        button.innerHTML = `<i class="${category.icon}"></i> ${category.name}`;
+        button.addEventListener('click', () => filterByCategory(category.id));
+        filtersContainer.appendChild(button);
+      });
+    }
+    
+    // Kategoriye göre filtrele
+    function filterByCategory(categoryId) {
+      currentFilter = categoryId;
+      
+      // URL'i güncelle
+      updateURL(categoryId);
+      
+      // Butonları güncelle
+      document.querySelectorAll('.filter-button').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-category') === categoryId) {
+          btn.classList.add('active');
+        }
+      });
+      
+      // Kategorileri göster/gizle
+      document.querySelectorAll('.category-section').forEach(section => {
+        const sectionCategoryId = section.getAttribute('data-category-id');
+        if (categoryId === 'all' || sectionCategoryId === categoryId) {
+          section.classList.remove('hidden');
+          // Smooth scroll animasyonu
+          setTimeout(() => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+              section.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+              section.style.opacity = '1';
+              section.style.transform = 'translateY(0)';
+            }, 10);
+          }, 10);
+        } else {
+          section.classList.add('hidden');
+        }
+      });
+      
+      // İlk görünen kategoriye scroll et
+      if (categoryId !== 'all') {
+        const firstVisible = document.querySelector('.category-section:not(.hidden)');
+        if (firstVisible) {
+          setTimeout(() => {
+            firstVisible.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+    
     // products.js'den ürünleri yükle ve göster
     function loadProducts() {
       try {
@@ -48,6 +164,7 @@
         }
         
         const data = productsData;
+        allCategories = data.categories;
         const container = document.getElementById('products-container');
         
         if (!container) {
@@ -55,9 +172,14 @@
           return;
         }
         
+        // Filtre butonlarını oluştur
+        createFilterButtons(data.categories);
+        
+        // Kategorileri oluştur
         data.categories.forEach(category => {
           const categorySection = document.createElement('div');
           categorySection.className = 'category-section';
+          categorySection.setAttribute('data-category-id', category.id);
           
           // Kategori başlığı
           const categoryHeader = document.createElement('div');
@@ -98,8 +220,11 @@
                 <h3>${product.name}</h3>
                 <p>${product.description}</p>
                 <div class="product-features">${featuresHTML}</div>
-                <div class="product-price">${product.price}</div>
-                <button class="btn-secondary">Detaylı Bilgi</button>
+                <button class="btn-secondary product-detail-btn" 
+                        data-product-name="${product.name.replace(/"/g, '&quot;')}"
+                        data-product-image="${product.image}"
+                        data-product-description="${product.description.replace(/"/g, '&quot;')}"
+                        data-product-features="${product.features.join(',')}">Detaylı Bilgi</button>
               </div>
             `;
             
@@ -110,11 +235,111 @@
           categorySection.appendChild(productsGrid);
           container.appendChild(categorySection);
         });
+        
+        // URL'den kategoriyi al ve filtrele
+        const categoryFromURL = getCategoryFromURL();
+        if (categoryFromURL !== 'all') {
+          filterByCategory(categoryFromURL);
+        }
+        
+        // Browser back/forward butonları için
+        window.addEventListener('popstate', (e) => {
+          const category = e.state?.category || getCategoryFromURL();
+          filterByCategory(category);
+        });
+        
+        // Modal event listener'larını ekle
+        attachModalListeners();
+        
       } catch (error) {
         console.error('Ürünler yüklenirken hata oluştu:', error);
         document.getElementById('products-container').innerHTML = 
           '<p style="text-align: center; padding: 2rem; color: #dc2626;">Ürünler yüklenirken bir hata oluştu. Lütfen sayfayı yenileyin.</p>';
       }
+    }
+    
+    // Modal açma/kapama fonksiyonları
+    function openProductModal(product) {
+      const modal = document.getElementById('productModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalImage = document.getElementById('modalImage');
+      const modalDescription = document.getElementById('modalDescription');
+      const modalFeatures = document.getElementById('modalFeatures');
+      
+      modalTitle.textContent = product.name;
+      
+      // Açıklamayı detaylandır
+      let descriptionHTML = `<strong>${product.description}</strong>`;
+      if (product.features && product.features.length > 0) {
+        descriptionHTML += '<br><br><strong>Özellikler:</strong><ul style="margin-top: 0.5rem; padding-left: 1.5rem;">';
+        product.features.forEach(feature => {
+          descriptionHTML += `<li style="margin-bottom: 0.5rem;">${feature}</li>`;
+        });
+        descriptionHTML += '</ul>';
+      }
+      modalDescription.innerHTML = descriptionHTML;
+      
+      // Resim yükleme
+      modalImage.style.display = 'block';
+      modalImage.alt = product.name;
+      const img = new Image();
+      img.onload = function() {
+        modalImage.src = product.image;
+      };
+      img.onerror = function() {
+        modalImage.src = 'assets/image/pos.jpeg';
+      };
+      img.src = product.image;
+      
+      // Özellikleri badge olarak ekle
+      modalFeatures.innerHTML = '';
+      if (product.features && product.features.length > 0) {
+        product.features.forEach(feature => {
+          const badge = document.createElement('span');
+          badge.className = 'product-modal-feature-badge';
+          badge.textContent = feature;
+          modalFeatures.appendChild(badge);
+        });
+      }
+      
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeProductModal() {
+      const modal = document.getElementById('productModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    // Modal dışına tıklanınca kapat
+    document.addEventListener('click', (e) => {
+      const modal = document.getElementById('productModal');
+      if (e.target === modal) {
+        closeProductModal();
+      }
+    });
+    
+    // ESC tuşu ile kapat
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeProductModal();
+      }
+    });
+    
+    // Detaylı Bilgi butonlarına event listener ekle
+    function attachModalListeners() {
+      document.querySelectorAll('.product-detail-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const product = {
+            name: this.getAttribute('data-product-name'),
+            image: this.getAttribute('data-product-image'),
+            description: this.getAttribute('data-product-description'),
+            features: this.getAttribute('data-product-features').split(',')
+          };
+          openProductModal(product);
+        });
+      });
     }
     
     // Sayfa yüklendiğinde ürünleri yükle

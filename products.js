@@ -112,28 +112,36 @@ const productsData = {
       "icon": "fas fa-wallet",
       "products": [
         {
-          "id": "ingenico-para-cekmecesi",
-          "name": "İngenico Uyumlu Para Çekmecesi",
-          "description": "İngenico POS cihazları ile tam uyumlu para çekmecesi. Otomatik açılma sistemi, 5 madeni para ve 4 kağıt para bölmeli.",
-          "price": "₺1.850",
-          "image": "assets/image/pos.jpeg",
-          "features": ["Otomatik", "5+4 Bölme"]
+          "id": "psc-para-cekmecesi-4646",
+          "name": "PSC Para Çekmecesi 46*46 – 5 Gözlü Metal",
+          "description": "46x46 cm boyutlarında 5 gözlü metal para çekmecesi. Dayanıklı yapı ve geniş depolama alanı.",
+          "price": "₺1.950",
+          "image": "assets/image/para_cekmecesi/psc4646.png",
+          "features": ["46x46 cm", "5 Gözlü", "Metal"]
         },
         {
-          "id": "metal-kasa",
-          "name": "Dayanıklı Metal Kasa",
-          "description": "Yoğun kullanım için güçlendirilmiş metal gövde. Ayarlanabilir bölmeler, anahtarlı kilit.",
-          "price": "₺2.400",
-          "image": "assets/image/pos.jpeg",
-          "features": ["Metal", "Ayarlanabilir"]
+          "id": "psc-para-cekmecesi-4141",
+          "name": "PSC Para Çekmecesi 41*41 5 Gözlü Metal",
+          "description": "41x41 cm boyutlarında 5 gözlü metal para çekmecesi. Kompakt tasarım ve dayanıklı yapı.",
+          "price": "₺1.750",
+          "image": "assets/image/para_cekmecesi/psc4141.png",
+          "features": ["41x41 cm", "5 Gözlü", "Metal"]
         },
         {
-          "id": "mini-kasa",
-          "name": "Kompakt Mini Kasa",
-          "description": "Küçük tezgahlar için yerden tasarruf sağlayan mini para çekmecesi. Sessiz açılma mekanizması.",
-          "price": "₺1.450",
-          "image": "assets/image/pos.jpeg",
-          "features": ["Kompakt", "Sessiz"]
+          "id": "psc-ft460-flip-top",
+          "name": "PSC FT-460 Flip Top Para Çekmecesi",
+          "description": "Flip top açılış mekanizmalı modern para çekmecesi. Kolay kullanım ve güvenli saklama.",
+          "price": "₺2.100",
+          "image": "assets/image/para_cekmecesi/pscft460.png",
+          "features": ["Flip Top", "Modern", "Güvenli"]
+        },
+        {
+          "id": "maken-sk325-para-cekmecesi",
+          "name": "Para Çekmecesi Maken SK-325",
+          "description": "Maken SK-325 model para çekmecesi. Sağlam yapı ve pratik kullanım. POS cihazları ile uyumlu.",
+          "price": "₺1.650",
+          "image": "assets/image/para_cekmecesi/makensk325.png",
+          "features": ["Sağlam", "Pratik", "POS Uyumlu"]
         }
       ]
     },
@@ -325,7 +333,7 @@ const productsData = {
       "id": "dokunmatik-ekranlar",
       "name": "Dokunmatik Ekranlar",
       "description": "Profesyonel dokunmatik ekran çözümleri ve tek ekran dokunmatik PC'ler",
-      "icon": "fas fa-touch",
+      "icon": "fas fa-tablet-alt",
       "products": [
         {
           "id": "anypay-i5-a2-siyah",
@@ -458,34 +466,130 @@ const productsData = {
       ]
     },
     {
+      "id": "para-sayma-makineleri",
+      "name": "Para Sayma Makineleri",
+      "description": "Profesyonel para sayma ve sıralama çözümleri",
+      "icon": "fas fa-money-bill-wave",
+      "products": [
+        {
+          "id": "asys-ap35-sorter",
+          "name": "ASYS AP35 Sorter Fitnesslı Karışık Para Sayma Makinesi",
+          "description": "Fitness özellikli karışık para sayma ve sıralama makinesi. Hızlı ve hassas sayım, otomatik sıralama özelliği ile profesyonel kullanım için ideal.",
+          "price": "Fiyat için iletişime geçin",
+          "image": "assets/image/para_sayma_makinesi/asysap35.png",
+          "features": ["Fitness", "Karışık Para", "Sıralama", "Hızlı Sayım"]
+        },
+        {
+          "id": "silver-bolt-sb90",
+          "name": "Silver Bolt SB90 TL / Euro Üsten beslemeli Kağıt Para Sayma Makinesi",
+          "description": "Üsten beslemeli TL ve Euro kağıt para sayma makinesi. Yüksek hız, doğru sayım ve kullanıcı dostu arayüz.",
+          "price": "Fiyat için iletişime geçin",
+          "image": "assets/image/para_sayma_makinesi/silverboltsb90.png",
+          "features": ["TL/Euro", "Üsten Beslemeli", "Yüksek Hız", "Doğru Sayım"]
+        },
+        {
+          "id": "turkuaz-t90",
+          "name": "Turkuaz T90 TL / Euro Kağıt Para Sayma Makinesi",
+          "description": "TL ve Euro kağıt para sayma makinesi. Kompakt tasarım, hızlı işlem ve güvenilir performans.",
+          "price": "Fiyat için iletişime geçin",
+          "image": "assets/image/para_sayma_makinesi/turkuazt90.png",
+          "features": ["TL/Euro", "Kompakt", "Hızlı", "Güvenilir"]
+        },
+        {
+          "id": "atlas-al622",
+          "name": "Atlas AL 622 TL / Euro Kağıt Para Sayma Makinesi",
+          "description": "TL ve Euro kağıt para sayma makinesi. Dayanıklı yapı, yüksek kapasite ve profesyonel kullanım.",
+          "price": "Fiyat için iletişime geçin",
+          "image": "assets/image/para_sayma_makinesi/atlasal622.png",
+          "features": ["TL/Euro", "Dayanıklı", "Yüksek Kapasite", "Profesyonel"]
+        },
+        {
+          "id": "glory-gfs220",
+          "name": "Glory GFS-220 Cs Para Sayma Makinesi Çift Kat",
+          "description": "Çift katlı para sayma makinesi. Yüksek kapasite, hızlı sayım ve otomatik sıralama özellikleri.",
+          "price": "Fiyat için iletişime geçin",
+          "image": "assets/image/para_sayma_makinesi/glorygsf220.png",
+          "features": ["Çift Kat", "Yüksek Kapasite", "Otomatik Sıralama", "Hızlı"]
+        },
+        {
+          "id": "nx900-2cis",
+          "name": "Nx-900 2 Cis Para Sayma Makinası 5 Ülke",
+          "description": "5 ülke para birimi desteği olan çift cihazlı para sayma makinesi. Çoklu para birimi sayımı ve sıralama özelliği.",
+          "price": "Fiyat için iletişime geçin",
+          "image": "assets/image/para_sayma_makinesi/nx900.png",
+          "features": ["5 Ülke", "Çift Cihaz", "Çoklu Para Birimi", "Sıralama"]
+        },
+        {
+          "id": "alfa-a950",
+          "name": "Alfa A-950 TL / Euro Kağıt Para Sayma Makinesi",
+          "description": "TL ve Euro kağıt para sayma makinesi. Modern tasarım, yüksek performans ve kolay kullanım.",
+          "price": "Fiyat için iletişime geçin",
+          "image": "assets/image/para_sayma_makinesi/alfa950.png",
+          "features": ["TL/Euro", "Modern Tasarım", "Yüksek Performans", "Kolay Kullanım"]
+        },
+        {
+          "id": "kisan-k5",
+          "name": "Kisan K5 4+1 Fitness Sorter Profesyonel Para Sayma Makinesi",
+          "description": "4+1 fitness sorter özellikli profesyonel para sayma makinesi. Fitness kontrolü, otomatik sıralama ve yüksek hız.",
+          "price": "Fiyat için iletişime geçin",
+          "image": "assets/image/para_sayma_makinesi/kisank5.png",
+          "features": ["4+1 Fitness", "Sorter", "Profesyonel", "Yüksek Hız"]
+        },
+        {
+          "id": "ksn-ft610",
+          "name": "Ksn FT 610 Para Sayma Makinesi 10 Ülke Çift Cıs",
+          "description": "10 ülke para birimi desteği olan çift cihazlı para sayma makinesi. Geniş para birimi desteği ve profesyonel sayım.",
+          "price": "Fiyat için iletişime geçin",
+          "image": "assets/image/para_sayma_makinesi/ksnft610.png",
+          "features": ["10 Ülke", "Çift Cihaz", "Geniş Desteği", "Profesyonel"]
+        },
+        {
+          "id": "action-ac100",
+          "name": "Action AC100 TL / EURO Kağıt Para Sayma Makinesi",
+          "description": "TL ve EURO kağıt para sayma makinesi. Ekonomik çözüm, hızlı sayım ve güvenilir performans.",
+          "price": "Fiyat için iletişime geçin",
+          "image": "assets/image/para_sayma_makinesi/actionac100.png",
+          "features": ["TL/EURO", "Ekonomik", "Hızlı", "Güvenilir"]
+        },
+        {
+          "id": "hitachi-hunter-ih110",
+          "name": "Hitachi-Hunter Ih-110 İki Katlı, 20 Ülke Kombinasyonlu Karışık Para Sayma Makinesi",
+          "description": "İki katlı, 20 ülke kombinasyonlu karışık para sayma makinesi. En gelişmiş özellikler, yüksek kapasite ve profesyonel kullanım.",
+          "price": "Fiyat için iletişime geçin",
+          "image": "assets/image/para_sayma_makinesi/hitacihunterih110.png",
+          "features": ["İki Katlı", "20 Ülke", "Karışık Para", "Profesyonel"]
+        }
+      ]
+    },
+    {
       "id": "genel-aksesuarlar",
       "name": "Genel Aksesuarlar",
       "description": "Tüm cihazlarınız için yedek parça ve aksesuarlar",
       "icon": "fas fa-tools",
       "products": [
         {
-          "id": "barkod-okuyucular",
-          "name": "Barkod Okuyucular",
-          "description": "1D ve 2D barkod okuma desteği. Kablolu ve kablosuz modeller mevcut.",
-          "price": "₺850",
-          "image": "assets/image/pos.jpeg",
-          "features": ["1D/2D", "Kablosuz"]
+          "id": "aparat-ve-tutucular",
+          "name": "Aparat ve Tutucular",
+          "description": "POS cihazları, barkod yazıcıları ve okuyucular için özel tasarlanmış aparat ve tutucu sistemleri. Güvenli montaj ve düzenli yerleşim sağlar.",
+          "price": "₺150",
+          "image": "assets/image/genel_aksesuar/aparatvetutucular.png",
+          "features": ["Güvenli Montaj", "Düzenli Yerleşim", "Çok Amaçlı"]
         },
         {
-          "id": "etiket-seritler",
-          "name": "Etiket ve Şeritler",
-          "description": "Çeşitli boyut ve malzemelerde termal etiket ruloları ve yazıcı şeritleri.",
-          "price": "₺180",
-          "image": "assets/image/pos.jpeg",
-          "features": ["Termal", "Çok Boyutlu"]
-        },
-        {
-          "id": "kablolar-adaptorler",
-          "name": "Kablolar ve Adaptörler",
-          "description": "USB, seri port, ethernet kabloları ve güç adaptörleri. Tüm modeller için uyumlu.",
+          "id": "kablo-ve-adaptorler",
+          "name": "Kablo ve Adaptörler",
+          "description": "USB, seri port, ethernet kabloları ve güç adaptörleri. Tüm POS cihazları, barkod yazıcıları ve okuyucular için uyumlu bağlantı çözümleri.",
           "price": "₺125",
-          "image": "assets/image/pos.jpeg",
-          "features": ["USB", "Ethernet"]
+          "image": "assets/image/genel_aksesuar/kabloveadaptör.png",
+          "features": ["USB", "Ethernet", "Seri Port", "Güç Adaptörü"]
+        },
+        {
+          "id": "serit-ve-etiketler",
+          "name": "Şerit ve Etiketler",
+          "description": "Termal yazıcılar için çeşitli boyut ve malzemelerde termal etiket ruloları ve yazıcı şeritleri. Yüksek kaliteli baskı ve dayanıklı yapı.",
+          "price": "₺180",
+          "image": "assets/image/genel_aksesuar/serit.png",
+          "features": ["Termal", "Çok Boyutlu", "Yüksek Kalite", "Dayanıklı"]
         }
       ]
     }

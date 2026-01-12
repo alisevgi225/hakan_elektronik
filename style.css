@@ -127,6 +127,24 @@ html, body {
   color: #dc2626;
   animation: slideInLeft 0.8s ease-out;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-img {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-img {
+  transform: scale(1.05);
+}
+
+.logo-text {
+  display: inline-block;
 }
 
 .logo span {
@@ -236,6 +254,54 @@ html, body {
   margin-bottom: 4rem;
 }
 
+.category-section.hidden {
+  display: none;
+}
+
+/* Kategori Filtre Butonları */
+.category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+.filter-button {
+  background: white;
+  color: #333;
+  border: 2px solid #e5e5e5;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-button:hover {
+  border-color: #dc2626;
+  color: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.15);
+}
+
+.filter-button.active {
+  background: #dc2626;
+  color: white;
+  border-color: #dc2626;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.filter-button i {
+  font-size: 0.9rem;
+}
+
 #products .section-title {
   margin-bottom: 3rem;
 }
@@ -334,7 +400,9 @@ html, body {
 .product-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 10px;
+  background: #ffffff;
   transition: transform 0.4s ease;
 }
 
@@ -718,6 +786,10 @@ footer p {
     font-size: 1.5rem;
   }
   
+  .logo-img {
+    height: 35px;
+  }
+  
   .hero {
     padding: 3rem 1rem;
   }
@@ -736,6 +808,16 @@ footer p {
   
   .section-title {
     font-size: 2rem;
+  }
+  
+  .category-filters {
+    gap: 0.75rem;
+    padding: 0 0.5rem;
+  }
+  
+  .filter-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
   }
   
   .products-category-header {
@@ -791,6 +873,243 @@ footer p {
   
   .product-image-container {
     height: 220px;
+  }
+}
+
+/* Ürün Detay Modal */
+.product-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 2000;
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease;
+}
+
+.product-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.product-modal-content {
+  background: linear-gradient(135deg, #ffffff 0%, #fef2f2 100%);
+  border-radius: 20px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.4s ease;
+  border: 2px solid #fee2e2;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2.5rem;
+  border-bottom: 2px solid #fee2e2;
+  background: linear-gradient(135deg, #ffffff 0%, #fee2e2 100%);
+  border-radius: 20px 20px 0 0;
+}
+
+.product-modal-title {
+  font-size: 2rem;
+  color: #000;
+  font-weight: 700;
+  margin: 0;
+}
+
+.product-modal-close {
+  background: #dc2626;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.product-modal-close:hover {
+  background: #b91c1c;
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.5);
+}
+
+.product-modal-body {
+  padding: 2.5rem;
+  overflow-y: auto;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.product-modal-image-container {
+  width: 100%;
+  height: 500px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid #fee2e2;
+  position: sticky;
+  top: 0;
+}
+
+.product-modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-modal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.product-modal-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  text-align: left;
+}
+
+.product-modal-description strong {
+  color: #000;
+  font-size: 1.15rem;
+}
+
+.product-modal-description ul {
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.product-modal-description li {
+  margin-bottom: 0.5rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.product-modal-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.product-modal-feature-badge {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #dc2626;
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid #fecaca;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.15);
+}
+
+.product-modal-price-button {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin: 2rem 0 0 0;
+  padding: 1.5rem 2.5rem;
+  background: linear-gradient(135deg, #25D366 0%, #20BA5A 100%);
+  border-radius: 50px;
+  border: none;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+}
+
+.product-modal-price-button:hover {
+  background: linear-gradient(135deg, #20BA5A 0%, #1DA851 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+}
+
+.product-modal-price-button i {
+  font-size: 1.8rem;
+}
+
+@media (max-width: 768px) {
+  .product-modal.active {
+    padding: 1rem;
+  }
+  
+  .product-modal-content {
+    max-height: 95vh;
+  }
+  
+  .product-modal-header {
+    padding: 1.5rem;
+  }
+  
+  .product-modal-title {
+    font-size: 1.5rem;
+  }
+  
+  .product-modal-body {
+    padding: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .product-modal-image-container {
+    height: 300px;
+    padding: 1.5rem;
+    position: relative;
+  }
+  
+  .product-modal-description {
+    font-size: 1rem;
+  }
+  
+  .product-modal-price-button {
+    font-size: 1.2rem;
+    padding: 1.2rem 2rem;
+  }
+  
+  .product-modal-price-button i {
+    font-size: 1.5rem;
   }
 }
 

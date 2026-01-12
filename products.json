@@ -111,28 +111,36 @@
       "icon": "fas fa-wallet",
       "products": [
         {
-          "id": "ingenico-para-cekmecesi",
-          "name": "İngenico Uyumlu Para Çekmecesi",
-          "description": "İngenico POS cihazları ile tam uyumlu para çekmecesi. Otomatik açılma sistemi, 5 madeni para ve 4 kağıt para bölmeli.",
-          "price": "₺1.850",
-          "image": "assets/image/pos.jpeg",
-          "features": ["Otomatik", "5+4 Bölme"]
+          "id": "psc-para-cekmecesi-4646",
+          "name": "PSC Para Çekmecesi 46*46 – 5 Gözlü Metal",
+          "description": "46x46 cm boyutlarında 5 gözlü metal para çekmecesi. Dayanıklı yapı ve geniş depolama alanı.",
+          "price": "₺1.950",
+          "image": "assets/image/para_cekmecesi/psc4646.png",
+          "features": ["46x46 cm", "5 Gözlü", "Metal"]
         },
         {
-          "id": "metal-kasa",
-          "name": "Dayanıklı Metal Kasa",
-          "description": "Yoğun kullanım için güçlendirilmiş metal gövde. Ayarlanabilir bölmeler, anahtarlı kilit.",
-          "price": "₺2.400",
-          "image": "assets/image/pos.jpeg",
-          "features": ["Metal", "Ayarlanabilir"]
+          "id": "psc-para-cekmecesi-4141",
+          "name": "PSC Para Çekmecesi 41*41 5 Gözlü Metal",
+          "description": "41x41 cm boyutlarında 5 gözlü metal para çekmecesi. Kompakt tasarım ve dayanıklı yapı.",
+          "price": "₺1.750",
+          "image": "assets/image/para_cekmecesi/psc4141.png",
+          "features": ["41x41 cm", "5 Gözlü", "Metal"]
         },
         {
-          "id": "mini-kasa",
-          "name": "Kompakt Mini Kasa",
-          "description": "Küçük tezgahlar için yerden tasarruf sağlayan mini para çekmecesi. Sessiz açılma mekanizması.",
-          "price": "₺1.450",
-          "image": "assets/image/pos.jpeg",
-          "features": ["Kompakt", "Sessiz"]
+          "id": "psc-ft460-flip-top",
+          "name": "PSC FT-460 Flip Top Para Çekmecesi",
+          "description": "Flip top açılış mekanizmalı modern para çekmecesi. Kolay kullanım ve güvenli saklama.",
+          "price": "₺2.100",
+          "image": "assets/image/para_cekmecesi/pscft460.png",
+          "features": ["Flip Top", "Modern", "Güvenli"]
+        },
+        {
+          "id": "maken-sk325-para-cekmecesi",
+          "name": "Para Çekmecesi Maken SK-325",
+          "description": "Maken SK-325 model para çekmecesi. Sağlam yapı ve pratik kullanım. POS cihazları ile uyumlu.",
+          "price": "₺1.650",
+          "image": "assets/image/para_cekmecesi/makensk325.png",
+          "features": ["Sağlam", "Pratik", "POS Uyumlu"]
         }
       ]
     },

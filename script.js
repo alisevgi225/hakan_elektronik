@@ -33,7 +33,10 @@ async function onConfigChange(config) {
 
   const companyNameEl = document.getElementById('company-name');
   if (companyNameEl) {
-    companyNameEl.innerHTML = companyName.split(' ')[0] + ' <span>' + companyName.split(' ').slice(1).join(' ') + '</span>';
+    // Logo'yu koruyarak sadece metni güncelle
+    const logoImg = companyNameEl.querySelector('.logo-img');
+    const logoImgHTML = logoImg ? logoImg.outerHTML : '';
+    companyNameEl.innerHTML = logoImgHTML + '<span class="logo-text">' + companyName.split(' ')[0] + ' <span>' + companyName.split(' ').slice(1).join(' ') + '</span></span>';
   }
   
   const heroTitleEl = document.getElementById('hero-title');
