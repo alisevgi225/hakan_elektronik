@@ -1113,3 +1113,112 @@ footer p {
   }
 }
 
+/* Referanslar Bölümü */
+.references-section {
+  background: transparent;
+  padding: 2rem 1.5rem;
+}
+
+.references-section .section-title {
+  margin-bottom: 1.5rem;
+}
+
+.references-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.reference-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+}
+
+.reference-item:hover {
+  transform: translateY(-5px);
+}
+
+.reference-image-wrapper {
+  width: 100%;
+  max-width: 160px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 0.75rem;
+  margin: 0 0 0.5rem 0;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.reference-item:hover .reference-image-wrapper {
+  background: #ffffff;
+  border-color: #dc2626;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.1);
+}
+
+.reference-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.reference-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .references-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .references-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.2rem;
+  }
+  
+  .reference-image-wrapper {
+    max-width: 140px;
+    height: 120px;
+    padding: 0.75rem;
+  }
+  
+  .reference-name {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .references-section {
+    padding: 1rem 0.5rem;
+  }
+  
+  .references-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .reference-image-wrapper {
+    max-width: 120px;
+    height: 100px;
+    padding: 0.5rem;
+  }
+}
+
