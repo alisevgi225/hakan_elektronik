@@ -48,14 +48,6 @@ const productsData = {
           "features": ["Kompakt", "Taşınabilir", "Hızlı"]
         },
         {
-          "id": "propay-p1000",
-          "name": "ProPay P1000",
-          "description": "Profesyonel kullanım için gelişmiş özellikler. 4G, WiFi, Bluetooth desteği.",
-          "price": "₺10.200",
-          "image": "assets/image/pos_cihaz/propayp1000.png",
-          "features": ["4G", "WiFi", "Bluetooth"]
-        },
-        {
           "id": "pavon-5",
           "name": "PAVO N5",
           "description": "Android tabanlı akıllı POS terminali. Geniş ekran, yüksek performans.",

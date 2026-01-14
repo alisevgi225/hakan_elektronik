@@ -7,3 +7,4 @@ Sitemap: https://www.hakanelektronik.com/sitemap.xml
 # Crawl-delay
 Crawl-delay: 1
 
+
