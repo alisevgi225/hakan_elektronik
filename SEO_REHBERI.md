@@ -38,7 +38,7 @@
 ### 2. Google Search Console
 1. https://search.google.com/search-console adresine gidin
 2. Sitenizi ekleyin
-3. Sitemap.xml'i gönderin: `https://www.hakanelektronik.com/sitemap.xml`
+3. Sitemap.xml'i gönderin: `https://www.yazarkasamalatya.com/sitemap.xml`
 4. robots.txt'i kontrol edin
 5. Indexleme durumunu takip edin
 
@@ -114,8 +114,8 @@
 ### index.html ve market.html'de güncellenmesi gerekenler:
 1. **Adres bilgisi**: Tam adres ekleyin (Schema.org'da)
 2. **Çalışma saatleri**: Gerçek saatleri güncelleyin
-3. **E-posta**: info@hakanelektronik.com (doğru mu kontrol edin)
-4. **Website URL**: https://www.hakanelektronik.com (domain alındığında güncelleyin)
+3. **E-posta**: info@yazarkasamalatya.com (doğru mu kontrol edin)
+4. **Website URL**: https://www.yazarkasamalatya.com (domain alındığında güncelleyin)
 
 ## 📝 İçerik Önerileri
 
@@ -147,7 +147,7 @@
 ## 📞 Destek
 
 SEO ile ilgili sorularınız için:
-- Email: info@hakanelektronik.com
+- Email: info@yazarkasamalatya.com
 - WhatsApp: +905459685329
 
 ---
