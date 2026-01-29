@@ -63,26 +63,6 @@
   <link rel="stylesheet" href="style.css">
   <style>@view-transition { navigation: auto; }</style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script>
-    // SDK script'lerini hata vermeden yükle
-    (function() {
-      const scripts = [
-        { src: '/_sdk/element_sdk.js', async: true },
-        { src: '/_sdk/data_sdk.js', async: true }
-      ];
-      
-      scripts.forEach(scriptConfig => {
-        const script = document.createElement('script');
-        script.src = scriptConfig.src;
-        script.async = scriptConfig.async || false;
-        script.onerror = function() {
-          // Hata durumunda sessizce devam et
-          this.remove();
-        };
-        document.head.appendChild(script);
-      });
-    })();
-  </script>
   <script src="products.js"></script>
  </head>
  <body>
