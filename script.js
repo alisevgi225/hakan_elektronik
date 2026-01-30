@@ -293,7 +293,7 @@ if (whatsappLink && contactForm) {
     if (name && message) {
       const whatsappMessage = `Merhaba, ben ${name}. ${message}`;
       const encodedMessage = encodeURIComponent(whatsappMessage);
-      whatsappLink.href = `https://wa.me/905459685329?text=${encodedMessage}`;
+      whatsappLink.href = `https://wa.me/905323157809?text=${encodedMessage}`;
     } else {
       e.preventDefault();
       alert('Lütfen adınızı ve mesajınızı girin.');

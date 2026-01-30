@@ -28,7 +28,7 @@
 1. Google Business Profile oluşturun: https://business.google.com
 2. İşletme bilgilerini ekleyin:
    - Tam adres (Malatya)
-   - Telefon: +905459685329
+   - Telefon: +905323157809
    - Çalışma saatleri
    - Kategori: Elektronik Mağazası / POS Sistemleri
    - Fotoğraflar ekleyin
@@ -148,7 +148,7 @@
 
 SEO ile ilgili sorularınız için:
 - Email: info@yazarkasamalatya.com
-- WhatsApp: +905459685329
+- WhatsApp: +905323157809
 
 ---
 
