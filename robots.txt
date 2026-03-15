@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.yazarkasamalatya.com/sitemap.xml
+Sitemap: https://yazarkasamalatya.com/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
