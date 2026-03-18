@@ -7,83 +7,95 @@
   <!-- Ana Sayfa -->
   <url>
     <loc>https://www.yazarkasamalatya.com/</loc>
-    <lastmod>2026-03-15</lastmod>
+    <lastmod>2026-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  
+  <!-- Landing sayfaları - malatya yazarkasa pos -->
+  <url>
+    <loc>https://www.yazarkasamalatya.com/malatya-yazarkasa.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.yazarkasamalatya.com/malatya-pos-cihazi.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.yazarkasamalatya.com/malatya-barkod-sistemi.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
   </url>
   
   <!-- Ürünler Sayfası -->
   <url>
     <loc>https://www.yazarkasamalatya.com/market.html</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2026-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
-  <!-- Kategori Sayfaları -->
+  <!-- Kategori sayfaları - SEO dostu URL'ler -->
   <url>
-    <loc>https://www.yazarkasamalatya.com/market.html?category=yazarkasalar</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://www.yazarkasamalatya.com/yazarkasalar/</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.yazarkasamalatya.com/para-kasalari/</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.yazarkasamalatya.com/barkod-yazicilari/</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.yazarkasamalatya.com/barkod-okuyucular/</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.yazarkasamalatya.com/teraziler/</loc>
+    <lastmod>2026-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <url>
-    <loc>https://www.yazarkasamalatya.com/market.html?category=para-kasalari</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.yazarkasamalatya.com/market.html?category=barkod-yazicilari</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.yazarkasamalatya.com/market.html?category=barkod-okuyucular</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.yazarkasamalatya.com/market.html?category=teraziler</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
+  <!-- Diğer kategoriler (market.html query) -->
   <url>
     <loc>https://www.yazarkasamalatya.com/market.html?category=dokunmatik-ekranlar</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2026-03-17</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
-  
   <url>
     <loc>https://www.yazarkasamalatya.com/market.html?category=pos-aksesuarlari</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2026-03-17</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
-  
   <url>
     <loc>https://www.yazarkasamalatya.com/market.html?category=para-sayma-makineleri</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2026-03-17</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
-  
   <url>
     <loc>https://www.yazarkasamalatya.com/market.html?category=genel-aksesuarlar</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2026-03-17</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   
 </urlset>
-
-

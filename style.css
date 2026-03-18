@@ -1184,6 +1184,19 @@ footer p {
   line-height: 1.4;
 }
 
+/* Breadcrumb */
+.breadcrumb {
+  font-size: 0.95rem;
+  color: #666;
+}
+.breadcrumb a {
+  color: #dc2626;
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .references-section {
     padding: 1.5rem 1rem;

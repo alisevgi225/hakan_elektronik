@@ -208,8 +208,8 @@ navLinks.forEach(link => {
     const pageName = link.getAttribute('data-page');
     const target = link.getAttribute('data-target');
     
-    // Eğer href varsa ve market.html veya index.html'e gidiyorsa, normal link davranışına izin ver
-    if (href && (href.includes('market.html') || href.includes('index.html'))) {
+    // Başka bir sayfaya giden linklere normal davranış (tıklanınca sayfa değişsin)
+    if (href && href !== '#' && !href.startsWith('#')) {
       return; // Normal link davranışı
     }
     
