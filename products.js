@@ -94,6 +94,14 @@ const productsData = {
           "price": "₺6.800",
           "image": "assets/image/pos_cihaz/pavoun20.png",
           "features": ["Ultra Kompakt", "Ekonomik", "Küçük İşletme"]
+        },
+        {
+          "id": "hugin-s1-android-yazarkasa-pos",
+          "name": "Hugin S1 Android Yazarkasa POS",
+          "description": "Android tabanlı yeni nesil yazarkasa POS cihazı. Şık tasarım, hızlı işlem ve güvenli ödeme altyapısı.",
+          "price": "Fiyat için iletişime geçin",
+          "image": "assets/image/pos_cihaz/hugins1.png",
+          "features": ["Android", "Yeni Nesil", "Hızlı İşlem", "Güvenli Ödeme"]
         }
       ]
     },
