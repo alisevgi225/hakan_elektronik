@@ -300,7 +300,7 @@ html, body {
 /* Sağdaki yarı: görselin sağ yarısını gösterir, merkeze doğru kayar */
 .hugin-right {
   left: 50%;
-  transform: translateX(-44px) scale(1.04);
+  transform: translateX(-44px) scale(1.05);
   z-index: 1;
 }
 
